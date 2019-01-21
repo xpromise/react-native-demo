@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {View, StyleSheet, Button, Text} from 'react-native';
 
 export default class Page2 extends Component {
+  static navigationOptions = {
+    title: 'page2'
+  }
   render () {
     return (
       <View style={styles.container}>

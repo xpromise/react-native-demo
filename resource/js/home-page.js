@@ -14,11 +14,15 @@ export default class HomePage extends Component {
         <Text>这是homepage页面</Text>
         <Button
           title="去page1页面"
-          onPress={() => navigation.navigate('page1')}
+          onPress={() => navigation.navigate('page1', {name: '动态传参-page1'})}
         />
         <Button
           title="去page2页面"
           onPress={() => navigation.push('page2')}
+        />
+        <Button
+          title="去page3页面"
+          onPress={() => navigation.push('page3', {title: 'first view'})}
         />
       </View>
     )
