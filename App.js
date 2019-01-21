@@ -7,47 +7,59 @@
  */
 
 import React from 'react';
-import {Button} from 'react-native';
-import {createStackNavigator, createAppContainer} from 'react-navigation';
-import HomePage from './resource/js/home-page';
+import {Platform} from 'react-native';
+import {createBottomTabNavigator, createAppContainer} from 'react-navigation';
+import Icon from 'react-native-vector-icons/AntDesign';
 import Page1 from './resource/js/page1';
 import Page2 from './resource/js/page2';
 import Page3 from './resource/js/page3';
+import TabBarComponent from './resource/js/tab-bar-component';
 
-const AppNavigator = createStackNavigator({
-  homePage: {
-    screen: HomePage,
+const AppTabNavigator = createBottomTabNavigator({
+  Page1: {
+    screen: Page1,
     navigationOptions: {
-      title: 'Home'
+      tabBarLabel: 'Page1',
+      tabBarIcon: ({tintColor, focused}) => (
+        <Icon
+          name='home'
+          size={26}
+          style={{color: tintColor}}
+        />
+      )
     }
   },
-  page1: {
-    screen: Page1,
-    navigationOptions: ({navigation}) => ({
-      title: navigation.state.params.name
-    })
+  Page2: {
+    screen: Page2,
+    navigationOptions: {
+      tabBarLabel: 'Page2',
+      tabBarIcon: ({tintColor, focused}) => (
+        <Icon
+          name='shoppingcart'
+          size={26}
+          style={{color: tintColor}}
+        />
+      )
+    }
   },
-  page2: Page2,
-  page3: {
+  Page3: {
     screen: Page3,
-    navigationOptions: ({navigation}) => {
-      const {state, setParams} = navigation;
-      const {params} = state;
-      return {
-        title: params.title ? params.title : 'This is page3',
-        headerRight: (
-          <Button
-            title={params.mode === 'edit' ? '保存' : '编辑'}
-            onPress={() => setParams({mode: params.mode === 'edit' ? '' : 'edit'})}
-          />
-        )
-      }
+    navigationOptions: {
+      tabBarLabel: 'Page3',
+      tabBarIcon: ({tintColor, focused}) => (
+        <Icon
+          name='search1'
+          size={26}
+          style={{color: tintColor}}
+        />
+      )
     }
   },
 }, {
-  /*navigationOptions: {
-    header: null
-  }*/
+  tabBarComponent: TabBarComponent,
+  tabBarOptions: {
+    activeTintColor: Platform.OS === 'ios' ? 'deeppink' : 'blue'
+  }
 })
 
-export default createAppContainer(AppNavigator);
+export default createAppContainer(AppTabNavigator);
