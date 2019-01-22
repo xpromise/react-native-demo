@@ -7,32 +7,25 @@
  */
 
 import React from 'react';
-import {createMaterialTopTabNavigator, createAppContainer} from 'react-navigation';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
+import FlatListDemo from './resource/js/flat-list-demo';
 import Home from './resource/js/home';
-import Login from './resource/js/login';
-import Register from './resource/js/register';
 
-const AppMaterialTopNavigator = createMaterialTopTabNavigator({
+const AppStackNavigator = createStackNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
       title: 'Home'
     }
   },
-  Login: {
-    screen: Login,
+  FlatListDemo: {
+    screen: FlatListDemo,
     navigationOptions: {
-      title: 'Login'
-    }
-  },
-  Register: {
-    screen: Register,
-    navigationOptions: {
-      title: 'Register'
+      title: 'FlatListDemo'
     }
   },
 }, {
   initialRouteName: 'Home'
 })
 
-export default createAppContainer(AppMaterialTopNavigator);
+export default createAppContainer(AppStackNavigator);
