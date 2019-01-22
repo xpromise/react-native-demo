@@ -15,7 +15,7 @@ export default class Register extends Component {
       <View style={styles.container}>
         <Text>这是注册页面</Text>
         <Button
-          title="回到上一页? 不好意思不行"
+          title="回到上一页? "
           onPress={() => navigation.goBack()}
         />
         <Button

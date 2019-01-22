@@ -10,7 +10,7 @@ export default class Login extends Component {
       <View style={styles.container}>
         <Text>hello这是登录页面</Text>
         <Button
-          title="回到上一页？不好意思不行"
+          title="回到上一页？"
           onPress={() => navigation.goBack()}
         />
         <Button

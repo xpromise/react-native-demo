@@ -7,12 +7,12 @@
  */
 
 import React from 'react';
-import {createSwitchNavigator, createAppContainer} from 'react-navigation';
+import {createMaterialTopTabNavigator, createAppContainer} from 'react-navigation';
 import Home from './resource/js/home';
 import Login from './resource/js/login';
 import Register from './resource/js/register';
 
-const AppSwitchNavigator = createSwitchNavigator({
+const AppMaterialTopNavigator = createMaterialTopTabNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
@@ -35,4 +35,4 @@ const AppSwitchNavigator = createSwitchNavigator({
   initialRouteName: 'Home'
 })
 
-export default createAppContainer(AppSwitchNavigator);
+export default createAppContainer(AppMaterialTopNavigator);
