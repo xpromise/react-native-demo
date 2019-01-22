@@ -1,30 +1,21 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Button, Text} from 'react-native';
 
-export default class Page2 extends Component {
-  static navigationOptions = {
-    title: 'page2'
-  }
+export default class Login extends Component {
+  
   render () {
     const {navigation} = this.props;
   
     return (
       <View style={styles.container}>
-        <Text>这是Page2页面</Text>
+        <Text>hello这是登录页面</Text>
         <Button
-          title="回到首页"
+          title="回到上一页？不好意思不行"
           onPress={() => navigation.goBack()}
         />
         <Button
-          title="改变主题"
-          onPress={() => {
-            navigation.setParams({
-              theme: {
-                tintColor: 'blue',
-                updateTime: Date.now()
-              }
-            })
-          }}
+          title="去注册"
+          onPress={() => navigation.navigate('Register')}
         />
       </View>
     )
