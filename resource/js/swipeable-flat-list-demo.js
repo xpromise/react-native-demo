@@ -5,15 +5,19 @@ import {
   FlatList,
   Text,
   RefreshControl,
-  ActivityIndicator
+  ActivityIndicator,
+  SwipeableFlatList,
+  TouchableHighlight,
+  Modal
 } from 'react-native';
 
 const data = ['广州市', '深圳市', '珠海市', '汕头市', '佛山市', '韶关市', '湛江市', '肇庆市', '江门市', '茂名市', '惠州市', '梅州市'];
 
-export default class FlatListDemo extends Component {
+export default class SwipeableFlatListDemo extends Component {
   state = {
     isLoading: false,
-    data: data
+    data: data,
+    modalVisible: false
   }
   
   _renderItem (data) {
@@ -66,12 +70,26 @@ export default class FlatListDemo extends Component {
     )
   }
   
+  _renderQuick = (item, index) => {
+    return (
+      <View style={styles.quickContainer}>
+        <TouchableHighlight
+          onPress={() => alert(`你确认要删除${item}吗？`)}
+        >
+          <View style={styles.quick}>
+            <Text style={styles.text}>删除</Text>
+          </View>
+        </TouchableHighlight>
+      </View>
+    )
+  }
+  
   render () {
     const {data, isLoading} = this.state;
     
     return (
       <View style={styles.container}>
-        <FlatList
+        <SwipeableFlatList
           data={data}
           renderItem={data => this._renderItem(data)}
           // 自带的下拉刷新功能
@@ -89,6 +107,10 @@ export default class FlatListDemo extends Component {
           //下拉加载
           ListFooterComponent={() => this.getIndicator()}
           onEndReached={() => this.loadData()}
+          //侧滑
+          renderQuickActions={({index, item}) => this._renderQuick(item, index)}
+          maxSwipeDistance={100}
+          bounceFirstRowOnMount={false}
         />
       </View>
     )
@@ -101,7 +123,7 @@ const styles = StyleSheet.create({
   },
   item: {
     backgroundColor: 'pink',
-    height: 200,
+    height: 150,
     marginRight: 15,
     marginLeft: 15,
     marginBottom: 15,
@@ -117,5 +139,20 @@ const styles = StyleSheet.create({
   },
   indicator: {
     margin: 10
+  },
+  quickContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    marginRight: 15,
+    marginBottom: 15
+  },
+  quick: {
+    backgroundColor: 'red',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 10,
+    width: 100
   }
 })

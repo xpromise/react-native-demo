@@ -8,8 +8,12 @@ export default class Home extends Component {
       <View style={styles.container}>
         <Text style={styles.text}>这是首页~</Text>
         <Button
-          title='点击跳转数据页面'
+          title='点击跳转flatList页面'
           onPress={() => navigation.navigate('FlatListDemo')}
+        />
+        <Button
+          title='点击跳转swipeableFlatList页面'SwipeableFlatListDemo
+          onPress={() => navigation.navigate('SwipeableFlatListDemo')}
         />
       </View>
     )
