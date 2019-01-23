@@ -1,12 +1,20 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button, TextInput} from 'react-native';
+import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 
-export default class HomePage extends Component {
+import PopularTab from './popular-tab';
+
+export default class Page1 extends Component {
   
   render () {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>欢迎page1~~~</Text>
+        <ScrollableTabView>
+          <PopularTab tabLabel='Java'>JAVA</PopularTab>
+          <PopularTab tabLabel='Ios'>IOS</PopularTab>
+          <PopularTab tabLabel='Android'>ANDROID</PopularTab>
+          <PopularTab tabLabel='Javascript'>JAVASCRIPT</PopularTab>
+        </ScrollableTabView>
       </View>
     )
   }
@@ -15,11 +23,8 @@ export default class HomePage extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'pink',
   },
   text: {
-    fontSize: 22
-  }
+    fontSize: 16
+  },
 });

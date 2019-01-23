@@ -19,7 +19,6 @@ const HomePage = createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: '最热',
       tabBarIcon: ({tintColor, focused}) => {
-        console.log(tintColor);
         return (
           <Image
             source={require('./resource/images/ic_polular.png')}
@@ -78,21 +77,52 @@ const HomePage = createBottomTabNavigator({
     }
   },
 }, {
-  initialRouteName: 'Page1',
-  defaultNavigationOptions: {
-    header: null,
-  }
+  initialRouteName: 'Page1'
 })
 
 export default createAppContainer(createStackNavigator({
-  Root: Root,
-  WelcomePage: WelcomePage,
-  HomePage: HomePage
-}, {
-  initialRouteName: 'Root',
-  defaultNavigationOptions: {
-    header: null
+  Root: {
+    screen: Root,
+    navigationOptions: {
+      header: null
+    }
+  },
+  WelcomePage: {
+    screen: WelcomePage,
+    navigationOptions: {
+      header: null
+    }
+  },
+  HomePage: {
+    screen: HomePage,
+    navigationOptions: ({navigation}) => {
+      const {routes, index} = navigation.state;
+      const routeName = routes[index].routeName;
+      let title = '最热';
+      
+      if (routeName === 'Page2') {
+        title = '趋势'
+      } else if (routeName === 'Page3') {
+        title = '收藏'
+      } else if (routeName === 'Page4') {
+        title = '我的'
+      }
+      
+      return {
+        title,
+        headerTitleStyle: {
+          flex: 1,
+          textAlign: 'center',
+          color: '#fff'
+        },
+        headerStyle: {
+          backgroundColor: 'pink'
+        }
+      }
+    }
   }
+}, {
+  initialRouteName: 'Root'
 }))
 
 const styles = StyleSheet.create({
