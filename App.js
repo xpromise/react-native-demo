@@ -1,49 +1,103 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
+ 加载路由配置
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import {Image, StyleSheet} from 'react-native';
+import {createStackNavigator, createAppContainer, createBottomTabNavigator} from 'react-navigation';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import Root from './js/pages/setup';
+import WelcomePage from './js/pages/welcome-page';
+import Page1 from './js/pages/page1';
+import Page2 from './js/pages/page2';
+import Page3 from './js/pages/page3';
+import Page4 from './js/pages/page4';
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
+const HomePage = createBottomTabNavigator({
+  Page1: {
+    screen: Page1,
+    navigationOptions: {
+      tabBarLabel: '最热',
+      tabBarIcon: ({tintColor, focused}) => {
+        console.log(tintColor);
+        return (
+          <Image
+            source={require('./resource/images/ic_polular.png')}
+            style={[styles.image, {tintColor}]}
+          />
+        )
+      },
+      tabBarOptions: {
+        activeTintColor: 'pink'
+      }
+    }
+  },
+  Page2: {
+    screen: Page2,
+    navigationOptions: {
+      tabBarLabel: '趋势',
+      tabBarIcon: ({tintColor, focused}) => (
+        <Image
+          source={require('./resource/images/ic_trending.png')}
+          style={[styles.image, {tintColor}]}
+        />
+      ),
+      tabBarOptions: {
+        activeTintColor: 'deeppink'
+      }
+    }
+  },
+  Page3: {
+    screen: Page3,
+    navigationOptions: {
+      tabBarLabel: '收藏',
+      tabBarIcon: ({tintColor, focused}) => (
+        <Image
+          source={require('./resource/images/ic_star.png')}
+          style={[styles.image, {tintColor}]}
+        />
+      ),
+      tabBarOptions: {
+        activeTintColor: 'hotpink'
+      }
+    }
+  },
+  Page4: {
+    screen: Page4,
+    navigationOptions: {
+      tabBarLabel: '我的',
+      tabBarIcon: ({tintColor, focused}) => (
+        <Image
+          source={require('./resource/images/ic_my.png')}
+          style={[styles.image, {tintColor}]}
+        />
+      ),
+      tabBarOptions: {
+        activeTintColor: 'blue'
+      }
+    }
+  },
+}, {
+  initialRouteName: 'Page1',
+  defaultNavigationOptions: {
+    header: null,
   }
-}
+})
+
+export default createAppContainer(createStackNavigator({
+  Root: Root,
+  WelcomePage: WelcomePage,
+  HomePage: HomePage
+}, {
+  initialRouteName: 'Root',
+  defaultNavigationOptions: {
+    header: null
+  }
+}))
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  image: {
+    width: 26,
+    height: 26
+  }
+})
