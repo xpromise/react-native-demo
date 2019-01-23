@@ -10,6 +10,7 @@ import React from 'react';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import FlatListDemo from './resource/js/flat-list-demo';
 import SwipeableFlatListDemo from './resource/js/swipeable-flat-list-demo';
+import SectionFlatListDemo from './resource/js/section-flat-list-demo';
 import Home from './resource/js/home';
 
 const AppStackNavigator = createStackNavigator({
@@ -29,6 +30,12 @@ const AppStackNavigator = createStackNavigator({
     screen: SwipeableFlatListDemo,
     navigationOptions: {
       title: 'SwipeableFlatListDemo'
+    }
+  },
+  SectionFlatListDemo: {
+    screen: SectionFlatListDemo,
+    navigationOptions: {
+      title: 'SectionFlatListDemo'
     }
   },
 }, {

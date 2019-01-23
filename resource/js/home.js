@@ -12,8 +12,12 @@ export default class Home extends Component {
           onPress={() => navigation.navigate('FlatListDemo')}
         />
         <Button
-          title='点击跳转swipeableFlatList页面'SwipeableFlatListDemo
+          title='点击跳转swipeableFlatList页面'
           onPress={() => navigation.navigate('SwipeableFlatListDemo')}
+        />
+        <Button
+          title='点击跳转SectionFlatList页面'
+          onPress={() => navigation.navigate('SectionFlatListDemo')}
         />
       </View>
     )
