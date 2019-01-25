@@ -4,8 +4,8 @@ import CheckBox from 'react-native-check-box';
 import Toast from 'react-native-root-toast';
 
 import TagOperation from './tag-operation';
-import {default_key} from './keys';
-import {headerBackgroundColor} from './theme-colors';
+import {default_key} from '../common/keys';
+import {headerBackgroundColor} from '../common/theme-colors';
 
 let _this = null;
 

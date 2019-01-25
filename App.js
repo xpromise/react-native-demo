@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import {Image, StyleSheet, Text} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import {createStackNavigator, createAppContainer, createBottomTabNavigator} from 'react-navigation';
 
 import Root from './js/pages/setup';
@@ -13,7 +13,7 @@ import Page2 from './js/pages/page2';
 import Page3 from './js/pages/page3';
 import Page4 from './js/pages/page4';
 import CustomTag from './js/pages/custom-tag';
-import {headerBackgroundColor} from './js/pages/theme-colors';
+import {headerBackgroundColor} from './js/common/theme-colors';
 
 const HomePage = createBottomTabNavigator({
   Page1: {

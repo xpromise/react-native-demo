@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, ActivityIndicator, Text, Image} from 'react-native';
+
 import MyFetch from "../common/fetch";
 import RepositoryItem from './repository-item';
-
 import {PullList} from '../../resource/react-native-pull';
 
 export default class PopularTab extends Component {

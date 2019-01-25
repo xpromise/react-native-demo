@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Button, TextInput, StatusBar} from 'react-native';
+import {StyleSheet, View, StatusBar} from 'react-native';
 import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 
 import PopularTab from './popular-tab';
-import {headerBackgroundColor} from './theme-colors';
+import {headerBackgroundColor} from '../common/theme-colors';
 import TagOperation from './tag-operation';
-import {default_key} from './keys';
+import {default_key} from '../common/keys';
 
 export default class Page1 extends Component {
   constructor (props) {

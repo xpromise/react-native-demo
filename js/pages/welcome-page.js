@@ -3,9 +3,6 @@ import {StyleSheet, Text, View} from 'react-native';
 import { NavigationActions } from 'react-navigation';
 
 export default class Welcome extends Component {
-  static navigationOptions = {
-    title: '欢迎'
-  }
   
   componentDidMount () {
     //模拟加载数据

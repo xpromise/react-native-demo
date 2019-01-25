@@ -1,6 +1,6 @@
 import {AsyncStorage} from 'react-native';
 import keys from '../../resource/data/keys';
-import {default_key} from './keys';
+import {default_key} from '../common/keys';
 
 export default class TagOperation {
   constructor (key) {
