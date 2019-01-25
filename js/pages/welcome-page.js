@@ -11,7 +11,7 @@ export default class Welcome extends Component {
     //模拟加载数据
     this.timer = setTimeout(() => {
       this.props.navigation.reset([NavigationActions.navigate({ routeName: 'HomePage' })], 0)
-    }, 2000)
+    }, 1000)
   }
   
   componentWillUnmount () {

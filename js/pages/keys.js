@@ -1,0 +1,1 @@
+export const default_key = 'language_key6';

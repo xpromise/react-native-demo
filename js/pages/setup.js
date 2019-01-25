@@ -13,7 +13,7 @@ export default class Root extends Component {
     //模拟加载数据
     this.timer = setTimeout(() => {
       this.props.navigation.reset([NavigationActions.navigate({ routeName: 'WelcomePage' })], 0)
-    }, 2000)
+    }, 1000)
   }
   
   componentWillUnmount () {

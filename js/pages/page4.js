@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import { NavigationActions } from 'react-navigation';
+import {StyleSheet, Text, View, Button} from 'react-native';
 
 export default class Page4 extends Component {
   
   render () {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>欢迎page4~~~</Text>
+        <Button
+          title='自定义标签'
+          onPress={() => this.props.navigation.navigate('CustomTag')}
+        />
       </View>
     )
   }

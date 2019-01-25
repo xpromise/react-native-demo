@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 5,
     borderWidth: 1,
+    borderColor: '#f7f7f7',
     padding: 10,
     borderRadius: 2,
     // shadowColor: 'gray',

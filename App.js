@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import {Image, StyleSheet} from 'react-native';
+import {Image, StyleSheet, Text} from 'react-native';
 import {createStackNavigator, createAppContainer, createBottomTabNavigator} from 'react-navigation';
 
 import Root from './js/pages/setup';
@@ -12,6 +12,8 @@ import Page1 from './js/pages/page1';
 import Page2 from './js/pages/page2';
 import Page3 from './js/pages/page3';
 import Page4 from './js/pages/page4';
+import CustomTag from './js/pages/custom-tag';
+import {headerBackgroundColor} from './js/pages/theme-colors';
 
 const HomePage = createBottomTabNavigator({
   Page1: {
@@ -26,9 +28,9 @@ const HomePage = createBottomTabNavigator({
           />
         )
       },
-      tabBarOptions: {
-        activeTintColor: 'pink'
-      }
+      // tabBarOptions: {
+      //   activeTintColor: 'pink'
+      // }
     }
   },
   Page2: {
@@ -41,9 +43,9 @@ const HomePage = createBottomTabNavigator({
           style={[styles.image, {tintColor}]}
         />
       ),
-      tabBarOptions: {
-        activeTintColor: 'deeppink'
-      }
+      // tabBarOptions: {
+      //   activeTintColor: 'deeppink'
+      // }
     }
   },
   Page3: {
@@ -56,9 +58,9 @@ const HomePage = createBottomTabNavigator({
           style={[styles.image, {tintColor}]}
         />
       ),
-      tabBarOptions: {
-        activeTintColor: 'hotpink'
-      }
+      // tabBarOptions: {
+      //   activeTintColor: 'hotpink'
+      // }
     }
   },
   Page4: {
@@ -71,13 +73,18 @@ const HomePage = createBottomTabNavigator({
           style={[styles.image, {tintColor}]}
         />
       ),
-      tabBarOptions: {
-        activeTintColor: 'blue'
-      }
+      // tabBarOptions: {
+      //   activeTintColor: 'blue'
+      // }
     }
   },
 }, {
-  initialRouteName: 'Page1'
+  initialRouteName: 'Page1',
+  defaultNavigationOptions: {
+    tabBarOptions: {
+      activeTintColor: headerBackgroundColor
+    }
+  }
 })
 
 export default createAppContainer(createStackNavigator({
@@ -116,10 +123,13 @@ export default createAppContainer(createStackNavigator({
           color: '#fff'
         },
         headerStyle: {
-          backgroundColor: 'pink'
+          backgroundColor: headerBackgroundColor
         }
       }
     }
+  },
+  CustomTag: {
+    screen: CustomTag,
   }
 }, {
   initialRouteName: 'Root'
