@@ -12,8 +12,12 @@ import Page1 from './js/pages/page1';
 import Page2 from './js/pages/page2';
 import Page3 from './js/pages/page3';
 import Page4 from './js/pages/page4';
-import CustomTag from './js/pages/custom-tag';
+import CustomTag from './js/pages/my/custom-tag';
+import SortTag from './js/pages/my/sort-tag';
 import {headerBackgroundColor} from './js/common/theme-colors';
+
+import Test from './js/pages/test';
+
 
 const HomePage = createBottomTabNavigator({
   Page1: {
@@ -130,7 +134,11 @@ export default createAppContainer(createStackNavigator({
   },
   CustomTag: {
     screen: CustomTag,
-  }
+  },
+  SortTag: {
+    screen: SortTag,
+  },
+  Test: Test
 }, {
   initialRouteName: 'Root'
 }))

@@ -4,8 +4,8 @@ import CheckBox from 'react-native-check-box';
 import Toast from 'react-native-root-toast';
 
 import TagOperation from './tag-operation';
-import {default_key} from '../common/keys';
-import {headerBackgroundColor} from '../common/theme-colors';
+import {default_key} from '../../common/keys';
+import {headerBackgroundColor} from '../../common/theme-colors';
 
 let _this = null;
 
@@ -27,7 +27,7 @@ export default class CustomTag extends Component {
     >
       <Image
         style={{width: 26, height: 26}}
-        source={require('../../resource/images/ic_arrow_back_white_36pt.png')}
+        source={require('../../../resource/images/ic_arrow_back_white_36pt.png')}
       />
     </TouchableHighlight>,
     headerRight: <Text style={{

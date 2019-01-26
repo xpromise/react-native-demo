@@ -10,6 +10,16 @@ export default class Page4 extends Component {
           title='自定义标签'
           onPress={() => this.props.navigation.navigate('CustomTag')}
         />
+        <Button
+          style={{marginTop: 10}}
+          title='标签排序'
+          onPress={() => this.props.navigation.navigate('SortTag')}
+        />
+        <Button
+          style={{marginTop: 10}}
+          title='test'
+          onPress={() => this.props.navigation.navigate('Test')}
+        />
       </View>
     )
   }

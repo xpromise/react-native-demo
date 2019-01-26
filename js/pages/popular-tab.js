@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, ActivityIndicator, Text, Image} from 'react-native';
+import {StyleSheet, View, ActivityIndicator, Text} from 'react-native';
 
 import MyFetch from "../common/fetch";
 import RepositoryItem from './repository-item';
@@ -63,7 +63,7 @@ export default class PopularTab extends Component {
   }
   
   _renderItem (item, index) {
-    return <RepositoryItem item={item} key={index} />
+    return <RepositoryItem item={item} key={index}/>
   }
   
   //下拉更新
@@ -112,7 +112,6 @@ export default class PopularTab extends Component {
               onPullRelease={this.onPullRelease}
               topIndicatorRender={this.topIndicatorRender}
               topIndicatorHeight={60}
-              prerenderingSiblingsNumber={4}
             />
             : <View style={styles.loading}><Text>加载中~~~</Text><ActivityIndicator size="large" color="gray" /></View>
         }

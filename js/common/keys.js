@@ -1,1 +1,1 @@
-export const default_key = 'language_key6';
+export const default_key = 'language_key1';

@@ -13,6 +13,8 @@
     "react-native-gesture-handler": "^1.0.12",
     "react-native-root-toast": "^3.0.2",
     "react-native-scrollable-tab-view": "^0.10.0",
+    "react-native-securerandom": "^0.3.0",
+    "react-native-sortable-listview": "^0.2.8",
     "react-navigation": "^3.0.9"
   },
   "devDependencies": {

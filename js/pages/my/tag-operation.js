@@ -1,6 +1,6 @@
 import {AsyncStorage} from 'react-native';
-import keys from '../../resource/data/keys';
-import {default_key} from '../common/keys';
+import keys from '../../../resource/data/keys';
+import {default_key} from '../../common/keys';
 
 export default class TagOperation {
   constructor (key) {
@@ -26,6 +26,15 @@ export default class TagOperation {
   save (data) {
     return new Promise((resolve, reject) => {
       AsyncStorage.setItem(this.key, JSON.stringify(data), err => {
+        if (!err) resolve()
+        else reject(err)
+      })
+    })
+  }
+  
+  remove () {
+    return new Promise((resolve, reject) => {
+      AsyncStorage.clear(err => {
         if (!err) resolve()
         else reject(err)
       })

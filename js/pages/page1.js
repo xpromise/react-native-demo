@@ -4,7 +4,7 @@ import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-v
 
 import PopularTab from './popular-tab';
 import {headerBackgroundColor} from '../common/theme-colors';
-import TagOperation from './tag-operation';
+import TagOperation from './my/tag-operation';
 import {default_key} from '../common/keys';
 
 export default class Page1 extends Component {
