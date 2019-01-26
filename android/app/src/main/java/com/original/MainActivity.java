@@ -1,9 +1,10 @@
-package com.demo;
+package com.original;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
+import net.rhogan.rnsecurerandom.RNSecureRandomPackage;
 
 public class MainActivity extends ReactActivity {
 
@@ -13,16 +14,17 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "demo";
+        new RNSecureRandomPackage();
+        return "original";
     }
 
     @Override
-    protected ReactActivityDelegate createReactActivityDelegate() {
-      return new ReactActivityDelegate(this, getMainComponentName()) {
-        @Override
-        protected ReactRootView createRootView() {
+     protected ReactActivityDelegate createReactActivityDelegate() {
+       return new ReactActivityDelegate(this, getMainComponentName()) {
+         @Override
+         protected ReactRootView createRootView() {
           return new RNGestureHandlerEnabledRootView(MainActivity.this);
-        }
-      };
-    }
+         }
+       };
+     }
 }

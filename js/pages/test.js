@@ -8,6 +8,8 @@ import {
   Button
 } from 'react-native';
 import { generateSecureRandom } from 'react-native-securerandom';
+import format from 'nanoid/async/format';
+import url from 'nanoid/url';
 
 import TagOperation from './my/tag-operation';
 import {default_key} from '../common/keys';
@@ -95,6 +97,10 @@ export default class MyComponent extends Component{
     this.tagOperation = new TagOperation(default_key)
   }
   
+  async createUser () {
+    return await format(generateSecureRandom, url, 6);
+  }
+  
   render () {
     return (
       <View style={styles.container}>
@@ -109,10 +115,36 @@ export default class MyComponent extends Component{
           title='生成唯一key'
           onPress={
             async () => {
-              const result1 = await generateSecureRandom(6);
-              const result2 = await generateSecureRandom(8);
-              console.log(result1);
-              console.log(result2);
+              try {
+                /*
+                 iRpA6E
+                 ft64TQ
+                 ojq7jq
+                 CVBIv4
+                 pgIGaZ
+                 eG1wP9
+                 xDuMJK
+                 HUEh8k
+               */
+                const result1 = await this.createUser();
+                const result2 = await this.createUser();
+                const result3 = await this.createUser();
+                const result4 = await this.createUser();
+                const result5 = await this.createUser();
+                const result6 = await this.createUser();
+                const result7 = await this.createUser();
+                const result8 = await this.createUser();
+                console.log(result1);
+                console.log(result2);
+                console.log(result3);
+                console.log(result4);
+                console.log(result5);
+                console.log(result6);
+                console.log(result7);
+                console.log(result8);
+              } catch (e) {
+                console.log(e);
+              }
             }
           }
         />

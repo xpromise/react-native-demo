@@ -3,36 +3,43 @@
     "path": "stars:>1",
     "name": "ALL",
     "short_name": "ALL",
-    "checked": true
+    "checked": true,
+    "key": "iRpA6E"
   },
   {
     "path": "iOS",
     "name": "iOS",
-    "checked": true
+    "checked": true,
+    "key": "ft64TQ"
   },
   {
     "path": "react-native",
     "name": "React Native",
-    "checked": true
+    "checked": true,
+    "key": "ojq7jq"
   },
   {
     "path": "MySQL",
     "name": "MySQL",
-    "checked": false
+    "checked": false,
+    "key": "CVBIv4"
   },
   {
     "path": "AngularJS",
     "name": "AngularJS",
-    "checked": false
+    "checked": false,
+    "key": "pgIGaZ"
   },
   {
     "path": "jQuery",
     "name": "jQuery",
-    "checked": false
+    "checked": false,
+    "key": "eG1wP9"
   },
   {
     "path": "react",
     "name": "React",
-    "checked": true
+    "checked": true,
+    "key": "xDuMJK"
   }
 ]
